@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import NextNprogress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }) {
   const [isSSR, setIsSSR] = useState(true);
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <GoogleOAuthProvider
       clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}
-    >
+    ><>
+            <NextNprogress />
+
       <div className="  xl:w-[1200px] m-auto overflow-hidden h-[100vh]">
         <Navbar />
         <div className="flex  ">
@@ -26,7 +29,7 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </div>
         </div>
-      </div>
+      </div></>
     </GoogleOAuthProvider>
   );
 }
