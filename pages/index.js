@@ -5,6 +5,7 @@ import axios from "axios";
 import NoResults from "../components/NoResults";
 import VideoCard from "../components/VideoCard";
 import { BASE_URL } from '../utils';
+import FooterBar from "../components/FooterBar";
 
 export default function Home({ videos }) {
   console.log(videos);

@@ -10,7 +10,7 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { createOrGetUser } from "../utils";
 import useAuthStore from "../store/authStore";
 
-function Navbar() {
+function FooterBar() {
   const [user, setUser] = useState();
   const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
@@ -29,7 +29,7 @@ function Navbar() {
   };
 
   return (
-    <div className="w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4  ">
+    <div className="w-full flex justify-between items-center border-t-2 border-gray-200 py-2 px-4  ">
       <Link href="/">
         <div className="w-[30px] md:w-[39px] ">
           <Image
@@ -103,4 +103,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default FooterBar;

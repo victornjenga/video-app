@@ -1,4 +1,3 @@
-;
 
 import { postDetailQuery } from './../../../utils/queries';
 import { client } from '../../../utils/client';
@@ -16,7 +15,6 @@ export default async function handler( req, res) {
     const { comment, userId } = req.body;
 
     const { id } = req.query;
-
     const data = await client
       .patch(id)
       .setIfMissing({ comments: [] })
