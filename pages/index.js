@@ -27,6 +27,7 @@ export default function Home({ videos }) {
             <NoResults text={`No Videos`} />
           )}
         </div>
+        {/* <FooterBar className="fixed"/> */}
       </main>
     </div>
   );

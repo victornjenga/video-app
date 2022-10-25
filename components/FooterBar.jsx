@@ -30,16 +30,16 @@ function FooterBar() {
   };
 
   return (
-    <div className="w-full flex fixed  md:hidden fixed z-10 justify-between items-center border-t-1 border-gray-200 py-2 px-4  ">
+    <div className="w-full flex md:hidden  b-0 z-10 justify-between items-center border-t-1 border-gray-200 py-2 px-4  ">
       <Link href="/">
-        <div className="w-[30px] md:w-[39px] ">
+        <div className="w-[30px]  ">
           <p className="text-2xl">
             <AiFillHome />
           </p>
         </div>
       </Link>
       <Link href="/mobile-search">
-        <div className="relative flex md:hidden">
+        <div >
           <BiSearch className="text-2xl font-bold" />
         </div>
       </Link>

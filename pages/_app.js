@@ -30,9 +30,11 @@ function MyApp({ Component, pageProps }) {
             <div className="mt-4 flex flex-col overflow-auto h-[88vh] videos ">
               <Component {...pageProps} />
             </div>
-          </div> 
+          </div>
+        </div>{" "}
+        <div className="fixed">
+          <FooterBar />
         </div>
-       <FooterBar />
       </>
     </GoogleOAuthProvider>
   );

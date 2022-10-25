@@ -38,7 +38,7 @@ if(!isShowingOnHome) {
             <video
               loop
               src={video.asset.url}
-              className='w-[250px] md:w-full rounded-xl cursor-pointer'
+              className='w-full rounded-xl cursor-pointer'
             ></video>
           </Link>
               <div className='flex gap-2 -mt-8 items-center ml-4'>
