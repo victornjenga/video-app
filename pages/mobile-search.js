@@ -26,16 +26,16 @@ function Mobilesearch() {
   return (
     <div className="xl:w-[400px] w-full sm:hidden  flex flex-col  justify-center mb-10 ">
       <div className="flex justify-center items-center sticky">
-        <form onSubmit={handleSearch} className="top-10 flex  bg-white">
+        <form onSubmit={handleSearch} className="top-10 flex border rounded-xl  border-gray-300">
           <input
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="bg-primary p-3 md:text-md font-medium border-2 border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 w-[300px] md:w-[350px] rounded-full  md:top-0"
+            className="bg-primary p-3 md:text-md font-medium  focus:outline-none w-[300px] md:w-[350px] rounded-full  md:top-0"
             placeholder="Search accounts and videos"
           />
           <button
             onClick={handleSearch}
-            className="absolute md:right-5 right-6 top-4 border-l-2 border-gray-300 pl-4 text-2xl text-gray-300"
+            className="   pl-4 text-2xl text-gray-700"
           >
             <BiSearch />
           </button>
