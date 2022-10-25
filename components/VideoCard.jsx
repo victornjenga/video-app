@@ -103,7 +103,7 @@ function VideoCard({
               loop
               ref={videoRef}
               src={video.asset.url}
-              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[90%] rounded-2xl justify-center items-center cursor-pointer bg-gray-100"
+              className="lg:w-[600px] md:h-[400px] lg:h-[528px] h-full w-[90%] rounded-2xl justify-center items-center cursor-pointer bg-gray-100"
             ></video>
           </Link>
 
