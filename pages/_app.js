@@ -20,9 +20,9 @@ function MyApp({ Component, pageProps }) {
     >
       <>
         <NextNprogress />
-        <div className="  xl:w-[1200px] m-auto overflow-hidden h-[100vh]">
+        <div className="xl:w-[1200px] m-auto overflow-hidden h-[100vh]">
           {" "}
-          <Navbar className=" hidden md:block" />
+          <Navbar className="" />
           <div className="flex  ">
             <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
               <Sidebar />
@@ -32,8 +32,8 @@ function MyApp({ Component, pageProps }) {
             </div>
           </div>
         </div>{" "}
-        <div className="fixed">
-          <FooterBar />
+        <div className="mb-0 pb-0 z-10 w-full sticky">
+          {/* <FooterBar /> */}
         </div>
       </>
     </GoogleOAuthProvider>
