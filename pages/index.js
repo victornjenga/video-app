@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 import NoResults from "../components/NoResults";
 import VideoCard from "../components/VideoCard";
-import { BASE_URL } from '../utils';
+import { BASE_URL } from "../utils";
 import FooterBar from "../components/FooterBar";
 
 export default function Home({ videos }) {
@@ -18,7 +18,7 @@ export default function Home({ videos }) {
       </Head>
 
       <main>
-        <div className="flex flex-col gap-10  h-full">
+        <div className="flex flex-col w-full justify-center items-center gap-10  h-full">
           {videos.length ? (
             videos?.map((video) => (
               <VideoCard post={video} isShowingOnHome key={video._id} />
@@ -31,15 +31,13 @@ export default function Home({ videos }) {
     </div>
   );
 }
-export const getServerSideProps = async ({
-  query: { topic },
-}) => {
+export const getServerSideProps = async ({ query: { topic } }) => {
   let response = await axios.get(`${BASE_URL}/api/post`);
 
-  if(topic) {
+  if (topic) {
     response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
   }
-  
+
   return {
     props: { videos: response.data },
   };
