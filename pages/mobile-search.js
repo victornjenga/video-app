@@ -30,12 +30,12 @@ function Mobilesearch() {
           <input
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            className="bg-primary p-3 md:text-md font-medium  focus:outline-none w-[300px] md:w-[350px] rounded-full  md:top-0"
-            placeholder="Search accounts and videos"
+            className="bg-primary p-2 text-sm font-medium  focus:outline-none w-[80%] md:w-[350px] rounded-full  md:top-0"
+            placeholder="Search accounts & videos"
           />
           <button
             onClick={handleSearch}
-            className="   pl-4 text-2xl text-gray-700"
+            className="   pl-2 text-2xl text-gray-700"
           >
             <BiSearch />
           </button>
