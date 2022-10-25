@@ -92,12 +92,11 @@ function VideoCard({
           </div>
         </div>
       </div>
-
       <div className="lg:ml-20 flex gap-4 relative justify-center items-center">
         <div
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
-          className="rounded-3xl justify-center items-center"
+          className="rounded-3xl flex justify-center items-center"
         >
           <Link href={`/detail/${_id}`}>
             <video
