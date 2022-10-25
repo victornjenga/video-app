@@ -24,12 +24,9 @@ function Mobilesearch() {
     }
   };
   return (
-    <div className="xl:w-[400px] w-full  flex flex-col  justify-center mb-10 ">
-      <div className="flex sticky">
-        <form
-          onSubmit={handleSearch}
-          className="top-10 flex  bg-white"
-        >
+    <div className="xl:w-[400px] w-full sm:hidden  flex flex-col  justify-center mb-10 ">
+      <div className="flex justify-center items-center sticky">
+        <form onSubmit={handleSearch} className="top-10 flex  bg-white">
           <input
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}

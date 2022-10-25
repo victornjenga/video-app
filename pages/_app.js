@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
               <Component {...pageProps} />
             </div>
           </div>{" "}
-          <FooterBar className="fixed mb-0 " />
+          <FooterBar className="sticky mb-0 " />
         </div>
       </>
     </GoogleOAuthProvider>
