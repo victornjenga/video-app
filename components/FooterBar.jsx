@@ -30,7 +30,7 @@ function FooterBar() {
   };
 
   return (
-    <div className="w-full flex md:hidden fixed z-10  justify-between items-center border-t-1 border-gray-200 py-2 px-4  ">
+    <div className="w-full flex fixed  md:hidden fixed z-10 justify-between items-center border-t-1 border-gray-200 py-2 px-4  ">
       <Link href="/">
         <div className="w-[30px] md:w-[39px] ">
           <p className="text-2xl">
@@ -43,7 +43,6 @@ function FooterBar() {
           <BiSearch className="text-2xl font-bold" />
         </div>
       </Link>
-
       <div>
         {userProfile ? (
           <div className="flex gap-5 md:gap-10">
