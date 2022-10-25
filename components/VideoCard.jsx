@@ -10,8 +10,8 @@ function VideoCard({
   post: { caption, postedBy, video, _id, likes },
   isShowingOnHome,
 }) {
-  const [playing, setPlaying]=useState(false);
-  const [isHover, setIsHover]=useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [isHover, setIsHover] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const videoRef = useRef(null);
 
@@ -31,30 +31,30 @@ function VideoCard({
     }
   }, [isVideoMuted]);
 
-if(!isShowingOnHome) {
-      return (
-        <div>
-          <Link href={`/detail/${_id}`}>
-            <video
-              loop
-              src={video.asset.url}
-              className='w-full rounded-xl cursor-pointer'
-            ></video>
-          </Link>
-              <div className='flex gap-2 -mt-8 items-center ml-4'>
-                <p className='text-white text-lg font-medium flex gap-1 items-center'>
-                  <BsPlay className='text-2xl' />
-                  {likes?.length || 0}
-                </p>
-              </div>
-          <Link href={`/detail/${_id}`}>
-            <p className='mt-5 text-md text-gray-800 cursor-pointer w-210'>
-              {caption}
-            </p>
-          </Link>
+  if (!isShowingOnHome) {
+    return (
+      <div>
+        <Link href={`/detail/${_id}`}>
+          <video
+            loop
+            src={video.asset.url}
+            className="w-full rounded-xl cursor-pointer"
+          ></video>
+        </Link>
+        <div className="flex gap-2 -mt-8 items-center ml-4">
+          <p className="text-white text-lg font-medium flex gap-1 items-center">
+            <BsPlay className="text-2xl" />
+            {likes?.length || 0}
+          </p>
         </div>
-      )
-}
+        <Link href={`/detail/${_id}`}>
+          <p className="mt-5 text-md text-gray-800 cursor-pointer w-210">
+            {caption}
+          </p>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col justify-center items-center border-b-2 border-gray-200 pb-6">
@@ -75,7 +75,7 @@ if(!isShowingOnHome) {
             </Link>
           </div>
           <div>
-          <Link href={`/profile/${postedBy?._id}`}>
+            <Link href={`/profile/${postedBy?._id}`}>
               <div className="flex items-center gap-2">
                 <p className="flex gap-2 items-center md:text-md font-bold text-primary">
                   {postedBy.userName}{" "}
@@ -93,18 +93,18 @@ if(!isShowingOnHome) {
         </div>
       </div>
 
-      <div className="lg:ml-20 flex gap-4 relative">
+      <div className="lg:ml-20 flex gap-4 relative justify-center items-center">
         <div
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
-          className="rounded-3xl"
+          className="rounded-3xl justify-center items-center"
         >
           <Link href={`/detail/${_id}`}>
             <video
               loop
               ref={videoRef}
               src={video.asset.url}
-              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[90%] rounded-2xl cursor-pointer bg-gray-100"
+              className="lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[90%] rounded-2xl justify-center items-center cursor-pointer bg-gray-100"
             ></video>
           </Link>
 
