@@ -195,3 +195,10 @@ export const topicPostsQuery = (topic) => {
 
   return query;
 };
+
+export const userFollowersQuery = () => {
+  const query = `*[_type == 'user' && '${userId}' in followers[]._ref ] | order(_createdAt desc) {
+    _id,
+      userId,
+  }`;
+};

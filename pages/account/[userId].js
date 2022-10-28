@@ -8,7 +8,11 @@ import { createOrGetUser } from "/utils";
 import VideoCard from "../../components/VideoCard";
 import NoResults from "../../components/NoResults";
 import { BASE_URL } from "../../utils";
-const Profile = ({ data }) => {
+import FollowButton from "../../components/FollowButton";
+import LikeButton from "../../components/LikeButton";
+const Profile = ({ data, postDetails }) => {
+  const [post, setPost] = useState(postDetails);
+
   const [showUserVideos, setShowUserVideos] = useState(true);
   const [videosList, setVideosList] = useState([]);
 
@@ -29,8 +33,17 @@ const Profile = ({ data }) => {
     fetchVideos();
   }, [showUserVideos, userLikedVideos, userVideos]);
 
+  // const handleLike = async (like) => {
+  //   if (userProfile) {
+  //     const res = await axios.put(`${BASE_URL}/api/follow`, {
+  //       userId: user._id,
+  //       follow,
+  //     });
+  //     setPost({ ...user, follows: res.data.follows });
+  //   }
+  // };
   return (
-    <div className="w-full">
+    <div className="w-[90%] ">
       <div className="flex gap-6 md:gap-10 ml-6 mb-4 bg-white w-full">
         <div className="w-20 h-20 md:w-32 md:h-32">
           <Image
@@ -46,6 +59,16 @@ const Profile = ({ data }) => {
           <div className="text-md md:text-2xl font-bold tracking-wider flex flex-col  items-center justify-center lowercase">
             <span>{user.userName.replace(/\s+/g, "")} </span>
             <p className="text-sm font-medium"> {user.userName}</p>
+          </div>
+          <div className="mt-10 px-10">
+            {/* {userProfile && (
+              <FollowButton
+                follows={post.follows}
+                flex="flex"
+                handleLike={() => handleLike(true)}
+                handleDislike={() => handleLike(false)}
+              />
+            )} */}
           </div>
           {userProfile ? (
             <button
@@ -94,11 +117,19 @@ const Profile = ({ data }) => {
   );
 };
 
-export const getServerSideProps = async ({ params: { userId } }) => {
+export const getServerSideProps = async ({ params: { userId, id } }) => {
   const res = await axios.get(`${BASE_URL}/api/profile/${userId}`);
-
+  const { data } = await axios.get(`${BASE_URL}/api/post/${id}`);
   return {
-    props: { data: res.data },
+    props: { data: res.data, postDetails: data },
   };
 };
 export default Profile;
+
+// export const getServerSideProps = async ({ params: { id } }) => {
+//   const { data } = await axios.get(`${BASE_URL}/api/post/${id}`);
+
+//   return {
+//     props: { postDetails: data },
+//   };
+// };

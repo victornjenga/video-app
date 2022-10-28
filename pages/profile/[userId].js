@@ -30,7 +30,7 @@ const Profile = ({ data }) => {
   }, [showUserVideos, userLikedVideos, userVideos]);
 
   return (
-    <div className="w-full">
+    <div className="w-[90%]">
       <div className="flex gap-6 md:gap-10 ml-6 mb-4 bg-white w-full">
         <div className="w-20 h-20 md:w-32 md:h-32">
           <Image
