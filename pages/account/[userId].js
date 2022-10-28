@@ -47,6 +47,22 @@ const Profile = ({ data }) => {
             <span>{user.userName.replace(/\s+/g, "")} </span>
             <p className="text-sm font-medium"> {user.userName}</p>
           </div>
+          {userProfile ? (
+            <button
+              onClick={() => {
+                googleLogout();
+                removeUser();
+              }}
+              className="px-2 py-1 rounded-lg font-medium text-white my-2 bg-[#F51997]"
+            >
+              Logout
+            </button>
+          ) : (
+            <GoogleLogin
+              onSuccess={(response) => createOrGetUser(response, addUser)}
+              onError={() => console.log("Login Failed")}
+            />
+          )}
         </div>
       </div>
       <div className="ml-4">

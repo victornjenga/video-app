@@ -74,15 +74,11 @@ function Navbar() {
               </button>
             </Link>
             {userProfile.image && (
-              <Link href="/">
+              <Link href={`/account/${userProfile?._id}`}>
                 <div>
                   <Image
                     className="rounded-full cursor-pointer"
                     src={userProfile.image}
-                    onClick={() => {
-                      googleLogout();
-                      removeUser();
-                    }}
                     alt="user"
                     width={40}
                     height={40}
