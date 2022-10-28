@@ -79,6 +79,10 @@ function Navbar() {
                   <Image
                     className="rounded-full cursor-pointer"
                     src={userProfile.image}
+                    onClick={() => {
+                      googleLogout();
+                      removeUser();
+                    }}
                     alt="user"
                     width={40}
                     height={40}
@@ -88,7 +92,7 @@ function Navbar() {
             )}
             <button
               type="button"
-              className=" border-2 p-2 rounded-full cursor-pointer outline-none shadow-md"
+              className=" border-2 p-2 hidden md:flex rounded-full cursor-pointer outline-none shadow-md"
               onClick={() => {
                 googleLogout();
                 removeUser();
