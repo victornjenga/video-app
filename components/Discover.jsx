@@ -14,9 +14,9 @@ function Discover() {
   return (
     <div>
       <div className="flex gap-3 flex-wrap">
-        <p className="text-gray-500 font-semibold m-3 mt-4 hidden xl:block">
+        {/* <p className="text-gray-500 font-semibold m-3 mt-4 hidden xl:block">
           Popular Topics
-        </p>
+        </p> */}
         {topics?.map((item) => (
           <Link href={`/?topic=${item.name}`} key={item.name}>
             <div
